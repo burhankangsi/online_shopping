@@ -1,0 +1,5 @@
+<root>
+    <item name='com.google.firebase.database.ValueEventListener'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

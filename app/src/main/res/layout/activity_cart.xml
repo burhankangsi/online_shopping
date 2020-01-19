@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/app_bar_activity_cart">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_cart_activity"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+
+        android:background="?attr/colorPrimaryDark"/>
+
+<!--        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ListView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cartlistView"
+    android:layout_gravity="center_horizontal"
+    android:divider="@color/colorAccent"
+    android:dividerHeight="1dp"
+    android:layout_below="@+id/app_bar_activity_cart"
+    android:transcriptMode="alwaysScroll"
+     />
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/Checkoutbutton_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PROCEED TO CHECKOUT"
+        android:textColor="@android:color/white"
+        fbutton:buttonColor="@color/colorPrimary"
+        fbutton:shadowColor="@color/colorPrimaryDark"
+        android:layout_below="@+id/cartlistView"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        />
+<!--    fbutton:shadowEnabled="true"-->
+<!--    fbutton:shadowHeight="5dp"-->
+<!--    fbutton:cornerRadius="5dp"-->
+
+
+</RelativeLayout>

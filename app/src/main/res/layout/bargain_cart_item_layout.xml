@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:descendantFocusability="blocksDescendants">
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        card_view:cardBackgroundColor="#FFF"
+        card_view:cardElevation="10dp"
+        card_view:cardCornerRadius="4dp"
+        android:focusable="false"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:focusable="false">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:id="@+id/pimageview_barg_cart"
+                android:src="@drawable/album3"
+                android:padding="10dp"
+                android:focusable="false"/>
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:focusable="false"
+                />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:focusable="false"
+                >
+
+                <TextView
+                    android:id="@+id/productname_barg_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Title"
+                    android:fontFamily="sans-serif"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="2dp"
+                    android:focusable="false"/>
+                <TextView
+                    android:id="@+id/productprice_barg_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Price"
+                    android:fontFamily="sans-serif"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="2dp"
+                    android:focusable="false"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Bargain price"
+                    android:id="@+id/bargainpricetv_barg_cart"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginLeft="2dp"
+                    android:focusable="false"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:focusable="false">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:focusable="false">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_subdirectory_arrow_right_black_24dp"
+                            android:id="@+id/acceptImageView_barg_cart"
+                            android:focusable="false"/>
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_forward_10_black_24dp"
+                            android:id="@+id/processingImageView_barg_cart"
+                            android:focusable="false"/>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_send_black_24dp"
+                            android:id="@+id/rejectImageView_barg_cart"
+                            android:focusable="false"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="4dp" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:focusable="false">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pending"
+                            android:fontFamily="serif"
+                            android:id="@+id/processing_barg_cart"
+                            android:layout_gravity="center_vertical"
+                            android:focusable="false"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Offer!"
+                            android:fontFamily="serif"
+                            android:id="@+id/offer_barg_cart"
+                            android:layout_gravity="center_vertical"
+                            android:focusable="false"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Accepted"
+                            android:fontFamily="serif"
+                            android:id="@+id/accepted_barg_cart"
+                            android:layout_gravity="center_vertical"
+                            android:focusable="false"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rejected"
+                            android:fontFamily="serif"
+                            android:id="@+id/rejected_barg_cart"
+                            android:layout_gravity="center_vertical"
+                            android:focusable="false"/>
+                    </RelativeLayout>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation ="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/movetocart"
+                        android:focusable="false">
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cart_barg_cart"
+                            android:src="@drawable/ic_shopping_cart_black_24dp"
+                            android:focusable="false"
+                            android:background="#36747d"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-MOVE TO CART"
+                            android:fontFamily="serif"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12sp"
+                            android:focusable="false"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ViewOffer_barg_cart"
+                        android:text="@string/ViewOfferTextView"
+                        android:fontFamily="serif"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="18sp"
+                        android:focusable="false"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/DeleteButton_barg_cart"
+                android:src="@android:drawable/ic_menu_delete"
+                android:background="#36747d"
+                android:focusable="false"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

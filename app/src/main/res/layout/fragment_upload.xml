@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:fitsSystemWindows="true">-->
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="0.9"-->
+<!--        android:scrollbarFadeDuration="0">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:focusableInTouchMode="true">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:text="Enter Product Details"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:background="@color/colorPrimaryDark"-->
+<!--                android:padding="7dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="24sp" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/addProductId"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:hint="ProductID" />-->
+
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/addProductTitle"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:hint="Title" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/addProductType"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:hint="Type" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/addProductPrice"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:hint="Price"-->
+<!--                android:inputType="numberDecimal" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/addProductQuantity"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:hint="Quantity"-->
+<!--                android:inputType="number" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/addProductDescription"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:hint="Description"-->
+<!--                android:inputType="textImeMultiLine" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/addProductSubmit"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="0.1"-->
+<!--                android:layout_margin="16dp"-->
+<!--                android:text="Submit"-->
+<!--                android:background="@color/colorPrimaryDark"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="20dp"/>-->
+
+
+<!--        </LinearLayout>-->
+
+<!--    </ScrollView>-->
+
+
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorAccent">
+
+            <AutoCompleteTextView
+                android:id="@+id/AddProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Product Name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:fontFamily="serif"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textColorHighlight="@color/colorAccent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorAccent">
+
+            <AutoCompleteTextView
+                android:id="@+id/AddProductDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Product Description"
+                android:inputType="text"
+                android:fontFamily="serif"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textColorHighlight="@color/colorAccent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorAccent">
+
+            <AutoCompleteTextView
+                android:id="@+id/AddProductPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Product Price"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:fontFamily="serif"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textColorHighlight="@color/colorAccent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorAccent">
+
+            <AutoCompleteTextView
+                android:id="@+id/AddProductCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Category(Sports,Lifestyle,Electronics etc.)"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:fontFamily="serif"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textColorHighlight="@color/colorAccent"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorAccent">
+
+            <AutoCompleteTextView
+                android:id="@+id/AddProductSeller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Seller Name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:fontFamily="serif"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textColorHighlight="@color/colorAccent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/btn_iv_choose"
+                android:text="Choose"
+                android:layout_gravity="center"/>
+
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColorHint="@color/colorAccent">-->
+
+<!--                <AutoCompleteTextView-->
+<!--                    android:id="@+id/AddProductURL"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Product Image URL"-->
+<!--                    android:inputType="textUri"-->
+<!--                    android:fontFamily="serif"-->
+<!--                    android:textColor="@color/colorPrimaryDark"-->
+<!--                    android:textColorHint="@color/colorAccent"-->
+<!--                    android:textColorHighlight="@color/colorAccent"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+<!--        </LinearLayout>-->
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:id="@+id/iv_add_product"
+            android:layout_below="@+id/textview"
+            android:layout_marginTop="20dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <info.hoang8f.widget.FButton
+                android:id="@+id/AddProductButton_frag_upload"
+                style="?android:textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="ADD PRODUCT"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                fbutton:buttonColor="@color/colorPrimary"
+                fbutton:shadowColor="@color/colorPrimaryDark"
+                android:layout_weight="1" />
+<!--            fbutton:shadowEnabled="true"-->
+<!--            fbutton:shadowHeight="1dp"-->
+<!--            fbutton:cornerRadius="2dp"-->
+<!--            android:layout_marginLeft="1dp"-->
+<!--            android:layout_marginRight="1dp"-->
+
+            <info.hoang8f.widget.FButton
+                android:id="@+id/ResetButton_frag_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="RESET"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                fbutton:buttonColor="@color/colorPrimary"
+                fbutton:shadowColor="@color/colorPrimaryDark"
+                 />
+<!--            fbutton:shadowEnabled="true"-->
+<!--            fbutton:shadowHeight="1dp"-->
+<!--            fbutton:cornerRadius="2dp"-->
+<!--            android:layout_marginLeft="1dp"-->
+<!--            android:layout_marginRight="1dp"-->
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

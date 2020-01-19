@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#dbe9e9"
+        card_view:cardBackgroundColor="#dbe9e9"
+        card_view:cardElevation="10dp"
+        card_view:cardCornerRadius="4dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="250dp"
+                android:id="@+id/productimageview_prod_list"
+                android:src="@drawable/album3"
+                android:contentDescription="Product Image"
+                android:layout_gravity="center"
+                android:padding="0dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="4">
+
+                <TextView
+                    android:id="@+id/productname_prod_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Title"
+                    android:fontFamily="sans-serif"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp" />
+
+                <TextView
+                    android:id="@+id/productprice_prod_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Price"
+                    android:fontFamily="sans-serif"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_add_to_cart_prod_list"
+                        android:text="Add To Cart"
+                        android:textStyle="bold"
+                        android:textSize="12dp"
+                        android:background="#2c4056"
+                        android:textColor="#ffffff"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="35dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_bargain_cart_prod_list"
+                        android:text="Bargain Cart"
+                        android:textStyle="bold"
+                        android:textSize="12dp"
+                        android:background="#2c4056"
+                        android:textColor="#ffffff"
+                        android:layout_gravity="end|center"
+                        android:layout_marginLeft="170dp"/>
+
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/addedInfo_prod_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This Product is in your Cart"
+                    android:fontFamily="sans-serif"
+                    android:textSize="15sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

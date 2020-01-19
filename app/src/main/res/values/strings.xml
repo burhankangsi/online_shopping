@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Bidding_Interface2</string>
+    <string name="title_activity_home__drawer">Home_Drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Log Out</string>
+    <string name="action_mark_all_read">Mark All as Read</string>
+    <string name="action_clear_all">Clear All</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_my_bids">My Bids</string>
+    <string name="menu_upload_items">Upload Items for Sell</string>
+    <string name="menu_my_profile">My Profile</string>
+    <string name="menu_trans_history">Transaction History</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_wishlist">My Wishlist</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_contact_us">Customer Support</string>
+
+    <string name="action_add_favourite">Add to Wishlist</string>
+    <string name="action_add_to_cart">Add to Cart</string>
+    <string name="backdrop_title">LOVE BUY AND SELL</string>
+    <string name="backdrop_subtitle">This season top 20 deals</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>My Bids</item>
+        <item>Upload Items To Sell</item>
+        <item>My Profile</item>
+        <item>Transaction History</item>
+        <item>Settings</item>
+        <item>Wishlist</item>
+        <item>Share And Earn</item>
+        <item>Customer Support</item>
+    </string-array>
+    <!-- Add the IP address of the image server here and build the APK or deploy the server
+    somewhere and fix the IP Address in the apk below -->
+    <string name="ip"></string>
+    <string name="Loading1">"HANG ON A SECOND, WE ARE LISTING OUR AWESOME PRODUCTS FOR YOU!"</string>
+    <string name="Loading2">"HANG ON A SECOND... WE ARE UPDATING YOUR PRODUCT LIST."</string>
+    <string name="SuccessfulCart">" PRODUCT SUCCESSFULLY ADDED TO CART "</string>
+    <string name="SuccessfulBargain">"BARGAIN REQUEST SUCCESSFULLY COMPLETED"</string>
+    <string name="BargainQuestion">"WANT TO BARGAIN ON THE PRODUCT? ENTER THE PRICE"</string>
+    <string name="ViewOfferTextView">"<u>View Offer</u>"</string>
+    <string name="OfferText">"THAT'S NICE... YOU WANT TO GIVE USER AN OFFER?"</string>
+    <string name="FinalPriceText">"Final price at which you are willing to sell"</string>
+    <string name="bargainError">" You cannot enter a price less than 40% more than 100% of the MRP of
+    <string name="OfferHint">"Additional Attractions(Freebies, Warranty etc.)"</string> product. "</string>
+    <string name="SNACKBAR_CART">"YOU HAVE A NICE CHOICE!"</string>
+    <string name="Deleted_Cart">"ITEM SUCCESSFULLY DELETED FROM THE CART"</string>
+    <string name="Deleted_Bargain">"BARGAIN REQUEST SUCCESSFULLY WITHDRAWN"</string>
+    <string name="action_cart"> Add to Cart</string>
+    <string name="action_wishlist">Add to Cart</string>
+
+    <string-array name="UserTips">
+        <item>"Tip!- We also give unexpected discounts to first buyer of a product if you add the product to cart directly!
+            So, Hurry Up!"</item>
+        <item>"Tip!- Instead of directly adding product to cart, try to save some bucks by bargain"</item>
+        <item>"Tip!- Our stats say users having personal chat with the seller save 10% more."</item>
+        <item>"Tip!- For any further information related to product you can chat with the seller. Tap on product for chat option!"</item>
+        <item>"Tip!- Our sellers also give attractive offers if you request bargain at around 10% less price."</item>
+        <item>"Tip!- Well behaved conversation with seller will increase the chances of accept of bargain request! "</item>
+        <item>"Tip!- You can also contact seller personally for customization of any product or additional benefits"</item>
+        <item>"Tip!- You can only request bargain on a product 2 times!"</item>
+        <item>"Tip!- You can also buy for higher price than mentioned in case product is low on stock!"</item>
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
