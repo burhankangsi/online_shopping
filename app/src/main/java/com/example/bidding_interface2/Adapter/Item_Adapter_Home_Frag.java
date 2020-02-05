@@ -1,5 +1,6 @@
 package com.example.bidding_interface2.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -17,37 +18,33 @@ import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import com.bumptech.glide.Glide;
 import com.example.bidding_interface2.BargainCart;
 import com.example.bidding_interface2.CustomerCartFragment;
 import com.example.bidding_interface2.Home_Drawer;
+import com.example.bidding_interface2.Model.ImageUploadInfo;
 import com.example.bidding_interface2.Model.ProductClass;
 import com.example.bidding_interface2.Model.Single_Bid_Item;
 import com.example.bidding_interface2.ProductDescription;
 import com.example.bidding_interface2.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Item_Adapter_Home_Frag extends RecyclerView.Adapter<Item_Adapter_Home_Frag.MyViewHolder> {
+public class Item_Adapter_Home_Frag extends RecyclerView.Adapter<Item_Adapter_Home_Frag.ViewHolder> {
 
     private Context mContext;
-    private List<Single_Bid_Item> itemList;
+    private List<ImageUploadInfo> itemList;
 
-    List<Single_Bid_Item> list = new ArrayList<>();
-
-    public Item_Adapter_Home_Frag(FragmentActivity activity, List<ProductClass> productClassList) {
-    }
-    public Item_Adapter_Home_Frag(FragmentActivity activity, List<Single_Bid_Item> itemList, int width, CustomProductListAdapter.ButtonClickListener buttonClickListener, CustomProductListAdapter.ButtonClickListener buttonClickListener1) {
-    }
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView item_name_single_card,  price_single_card, bargain;
         public ImageView thumbnail, overflow;
         public Button btn_add_to_cart_card;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             item_name_single_card = (TextView) itemView.findViewById(R.id.item_name_card);
            // quantity_single_card = (TextView) itemView.findViewById(R.id.quantity_card);
@@ -58,33 +55,43 @@ public class Item_Adapter_Home_Frag extends RecyclerView.Adapter<Item_Adapter_Ho
             bargain = (TextView)itemView.findViewById(R.id.bargain_card);
         }
     }
-    public Item_Adapter_Home_Frag(Context mContext, List<Single_Bid_Item> itemList)
+    public Item_Adapter_Home_Frag(Context mContext, List<ImageUploadInfo> itemList)
     {
         this.mContext = mContext;
         this.itemList = itemList;
     }
+
     @NonNull
     @Override
-    public Item_Adapter_Home_Frag.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent, false);
+//        return new MyViewHolder(view);
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent, false);
-        return new MyViewHolder(view);
+
+        ViewHolder viewHolder = new ViewHolder(view);
+
+        return viewHolder;
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final Item_Adapter_Home_Frag.MyViewHolder holder, int position) {
-        Single_Bid_Item single_bid_item = itemList.get(position);
-        holder.item_name_single_card.setText(single_bid_item.getItem_name());
-        holder.price_single_card.setText(single_bid_item.getItem_price()+"price");
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+        ImageUploadInfo single_bid_item = itemList.get(position);
+        holder.item_name_single_card.setText(single_bid_item.getName());
+        holder.price_single_card.setText(single_bid_item.getPrice());
         // holder.quantity_single_card.setText(single_bid_item.getItem_quantity()+"quantity");
+        Picasso.get().load(single_bid_item.getImage()).into(holder.thumbnail);
 
         //Loading Item cover using Glide Library
-        Glide.with(mContext).load(single_bid_item.getImage()).into(holder.thumbnail);
+       //Glide.with(mContext).load(single_bid_item.getImage()).into(holder.thumbnail);
+
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showPopupMenu(holder.overflow);
             }
         });
+
         holder.thumbnail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,6 +114,7 @@ public class Item_Adapter_Home_Frag extends RecyclerView.Adapter<Item_Adapter_Ho
                 mContext.startActivity(intent);
             }
         });
+
     }
     private void showPopupMenu(View view)
         {
@@ -141,9 +149,11 @@ public class Item_Adapter_Home_Frag extends RecyclerView.Adapter<Item_Adapter_Ho
     }
 
 
+
     @NonNull
     @Override
     public int getItemCount() {
-        return list.size();
+       // itemList = new ArrayList<>();
+        return itemList.size();
     }
 }

@@ -117,10 +117,10 @@ public class IndividualProduct extends AppCompatActivity {
                 .setText(item.getPrice());
 
         productImage = (ImageView) findViewById(R.id.productImageIndividualProduct);
-        Picasso.with(getApplicationContext())
-                .load(ip + String.valueOf(item.getProductID()) + ".jpg")
-                .fit()
-                .into(productImage);
+//        Picasso.with(getApplicationContext())
+//                .load(ip + String.valueOf(item.getProductID()) + ".jpg")
+//                .fit()
+//                .into(productImage);
 
         btn_add = (Button) findViewById(R.id.incrementQuantity);
         btn_add.setOnClickListener(new View.OnClickListener() {

@@ -83,13 +83,13 @@ public class CustomProductListAdapter extends BaseAdapter {
         viewHolder.ProductName.setText(curProduct.getName());
         viewHolder.ProductPrice.setText("Rs. "+curProduct.getPrice());
 
-        Picasso.with(mContext)
-                .setIndicatorsEnabled(false);
-        Picasso.with(mContext)
-                .load(curProduct.getImage())
-                .placeholder(R.drawable.album3)
-                .error(R.drawable.album3)
-                .into(viewHolder.ProductImage);
+//        Picasso.with(mContext)
+//                .setIndicatorsEnabled(false);
+//        Picasso.with(mContext)
+//                .load(curProduct.getImage())
+//                .placeholder(R.drawable.album3)
+//                .error(R.drawable.album3)
+//                .into(viewHolder.ProductImage);
 
         return convertView;
     }

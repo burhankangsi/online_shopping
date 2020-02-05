@@ -133,10 +133,10 @@ public class IndividualProductSeller extends AppCompatActivity {
                 .setText(item.getPrice());
 
         productImage = (ImageView) findViewById(R.id.productImageIndividualProductSeller);
-        Picasso.with(getApplicationContext())
-                .load(ip + String.valueOf(item.getProductID()) + ".jpg")
-                .fit()
-                .into(productImage);
+//        Picasso.with(getApplicationContext())
+//                .load(ip + String.valueOf(item.getProductID()) + ".jpg")
+//                .fit()
+//                .into(productImage);
 
         progressBar.setVisibility(View.GONE);
     }

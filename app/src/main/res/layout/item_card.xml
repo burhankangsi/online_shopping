@@ -32,8 +32,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:weightSum="4"
                 >
 
             <TextView
@@ -47,7 +48,8 @@
                 android:textColor="#000000"
                 android:textSize="@dimen/album_title"
                 android:clickable="true"
-                android:focusable="true"/>
+                android:focusable="true"
+                android:layout_weight="2"/>
 
             <ImageView
                     android:id="@+id/overflow"
@@ -55,15 +57,14 @@
                     android:layout_height="@dimen/ic_album_overflow_height"
                     android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
                     android:scaleType="centerCrop"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_more_vert_black_24dp" />
+                    android:src="@drawable/ic_more_vert_black_24dp"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
 
             <TextView
                 android:id="@+id/price_card"
@@ -73,12 +74,13 @@
                 android:paddingBottom="@dimen/songs_count_padding_bottom"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
+                android:layout_weight="3"
                 android:textSize="@dimen/songs_count" />
 
 
             <TextView
                 android:id="@+id/bargain_card"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bargain"
                 android:textStyle="bold"
@@ -88,7 +90,9 @@
                 android:paddingBottom="@dimen/songs_count_padding_bottom"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
-                android:textSize="@dimen/songs_count" />
+                android:textSize="@dimen/songs_count"
+                android:layout_marginLeft="80dp"
+                />
 
 
         </LinearLayout>

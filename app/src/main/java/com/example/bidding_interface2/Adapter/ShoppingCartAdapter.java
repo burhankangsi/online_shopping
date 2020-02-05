@@ -44,12 +44,12 @@ public class ShoppingCartAdapter extends ArrayAdapter {
         ShoppingItem currentItem = (ShoppingItem) getItem(position);
 
         ImageView img = (ImageView) listItemView.findViewById(R.id.cartItemIcon);
-        Picasso.with(getContext())
-                .load(mContext.getApplicationContext().getString(R.string.ip)
-                        + String.valueOf(currentItem.getProductID())
-                        + ".jpg")
-                .fit()
-                .into(img);
+//        Picasso.with(getContext())
+//                .load(mContext.getApplicationContext().getString(R.string.ip)
+//                        + String.valueOf(currentItem.getProductID())
+//                        + ".jpg")
+//                .fit()
+//                .into(img);
 
         ((TextView) listItemView.findViewById(R.id.cartItemName))
                 .setText(currentItem.getName());

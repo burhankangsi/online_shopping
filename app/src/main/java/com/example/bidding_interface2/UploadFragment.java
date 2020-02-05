@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +25,11 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.bidding_interface2.Model.ProductClass;
 import com.example.bidding_interface2.Model.SlideshowViewModel;
 import com.firebase.client.Firebase;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -34,6 +38,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.net.URI;
 
 import info.hoang8f.widget.FButton;
 
@@ -63,7 +68,7 @@ public class UploadFragment extends Fragment {
     String Storage_Path = "All_Image_Uploads/";
 
     // Root Database Name for Firebase Database.
-    public static final String Database_Path = "All_Image_Uploads_Database";
+    public static final String Database_Path = "productDisplay";
     // Creating URI.
     Uri FilePathUri;
     ImageView SelectImage;
@@ -248,67 +253,113 @@ public class UploadFragment extends Fragment {
                     progressDialog.show();
 
                     // Creating second StorageReference.
-                    StorageReference storageReference2nd = storageReference.child(Storage_Path + System.currentTimeMillis() + "." + GetFileExtension(FilePathUri));
+                    final StorageReference storageReference2nd = storageReference.child(Storage_Path + System.currentTimeMillis() + "." + GetFileExtension(FilePathUri));
 
-                    // Adding addOnSuccessListener to second StorageReference.
                     storageReference2nd.putFile(FilePathUri)
-                            .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                @Override
-                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            .continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>> () {
+                        @Override
+                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                            if (!task.isSuccessful()){
+                                throw task.getException();
+                            }
+                            return storageReference2nd.getDownloadUrl();
+                        }
+                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if (task.isSuccessful()){
+                                Uri downUri = task.getResult();
+                                Log.d("url_image", "onComplete: Url: "+ downUri.toString());
+                                String url_image = downUri.toString();
 
-                                    // Getting image name from EditText and store into string variable.
-                                 //   String TempImageName = ProductImageURL.getText().toString().trim();
-                                    Productname = ProductName.getText().toString();
-                                    Productdescription = ProductDescription.getText().toString();
-                                    Productprice = Integer.parseInt(ProductPrice.getText().toString());
-                                    Productseller = ProductSeller.getText().toString();
-                                    Productcategory = ProductCategory.getText().toString();
-                                   // ProductimageURL = ProductImageURL.getText().toString();
+                                Productname = ProductName.getText().toString();
+                                Productdescription = ProductDescription.getText().toString();
+                                Productprice = Integer.parseInt(ProductPrice.getText().toString());
+                                Productseller = ProductSeller.getText().toString();
+                                Productcategory = ProductCategory.getText().toString();
+                                // ProductimageURL = ProductImageURL.getText().toString();
+
+                                // Hiding the progressDialog after done uploading.
+                                progressDialog.dismiss();
+
+                                // Showing toast message after done uploading.
+                                Toast.makeText(getActivity(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
+
+                                ProductClass Product = new ProductClass(Productname, url_image,
+                                        Productprice, Productdescription, Productseller, ProductDisplayRefPush.getKey(), Productcategory);
+                                ProductDisplayRefPush.setValue(Product);
 
 
-                                    // Hiding the progressDialog after done uploading.
-                                    progressDialog.dismiss();
+                                // Getting image upload ID.
+                                String ImageUploadId = databaseReference.push().getKey();
 
-                                    // Showing toast message after done uploading.
-                                    Toast.makeText(getActivity(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
 
-                                    @SuppressWarnings("VisibleForTests")
-                                   // ProductClass Product = new ProductClass(TempImageName, taskSnapshot.getDownloadUrl().toString());
+//
+//                    // Adding addOnSuccessListener to second StorageReference.
+//                    storageReference2nd.putFile(FilePathUri)
+//                            .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                                @Override
+//                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//
+//                                    // Getting image name from EditText and store into string variable.
+//                                 //   String TempImageName = ProductImageURL.getText().toString().trim();
+//                                    Productname = ProductName.getText().toString();
+//                                    Productdescription = ProductDescription.getText().toString();
+//                                    Productprice = Integer.parseInt(ProductPrice.getText().toString());
+//                                    Productseller = ProductSeller.getText().toString();
+//                                    Productcategory = ProductCategory.getText().toString();
+//                                   // ProductimageURL = ProductImageURL.getText().toString();
+//
+//                                    // Hiding the progressDialog after done uploading.
+//                                    progressDialog.dismiss();
+//
+//                                    // Showing toast message after done uploading.
+//                                    Toast.makeText(getActivity(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
+//
+//                                    storageReference2nd.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                                        @Override
+//                                        public void onSuccess(Uri uri) {
+//                                            Log.d("url_image", "onSuccess: uri= "+ uri.toString());
+//                                        }
+//                                    });
+//
+//                                    ProductClass Product = new ProductClass(Productname, "ll",
+//                                            Productprice, Productdescription, Productseller, ProductDisplayRefPush.getKey(), Productcategory);
+//                                    ProductDisplayRefPush.setValue(Product);
+//
+//
+//                                    // Getting image upload ID.
+//                                    String ImageUploadId = databaseReference.push().getKey();
+//
+//                                    // Adding image upload id s child element into databaseReference.
+//                                    // databaseReference.child(ImageUploadId).setValue("ll");
+//                                }
+//                            })
+//                            // If something goes wrong .
+//                            .addOnFailureListener(new OnFailureListener() {
+//                                @Override
+//                                public void onFailure(@NonNull Exception exception) {
+//
+//                                    // Hiding the progressDialog.
+//                                    progressDialog.dismiss();
+//
+//                                    // Showing exception erro message.
+//                                    Toast.makeText(getActivity(), exception.getMessage(), Toast.LENGTH_LONG).show();
+//                                }
+//                            })
+//                            // On progress change upload time.
+//                            .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+//                                @Override
+//                                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+//
+//                                    // Setting progressDialog Title.
+//                                    progressDialog.setTitle("Image is Uploading...");
 
-                                    ProductClass Product = new ProductClass(Productname, taskSnapshot.getUploadSessionUri().toString(),
-                                            Productprice, Productdescription, Productseller, ProductDisplayRefPush.getKey(), Productcategory);
-                                    ProductDisplayRefPush.setValue(Product);
-
-
-                                    // Getting image upload ID.
-                                    //String ImageUploadId = databaseReference.push().getKey();
-
-                                    // Adding image upload id s child element into databaseReference.
-                                   // databaseReference.child(ImageUploadId).setValue(Product);
-                                }
-                            })
-                            // If something goes wrong .
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception exception) {
-
-                                    // Hiding the progressDialog.
-                                    progressDialog.dismiss();
-
-                                    // Showing exception erro message.
-                                    Toast.makeText(getActivity(), exception.getMessage(), Toast.LENGTH_LONG).show();
-                                }
-                            })
-                            // On progress change upload time.
-                            .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                                @Override
-                                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-
-                                    // Setting progressDialog Title.
-                                    progressDialog.setTitle("Image is Uploading...");
-
-                                }
-                            });
+//                                }
+//                            });
                 }
                 else {
 

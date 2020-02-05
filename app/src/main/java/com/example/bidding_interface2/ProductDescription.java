@@ -48,13 +48,13 @@ public class ProductDescription extends AppCompatActivity {
         info.hoang8f.widget.FButton BargainButton = (info.hoang8f.widget.FButton) findViewById(R.id.BargainButton_prod_desc);
 
         // SETTING THE DETAILS IN THE VIEWS
-        Picasso.with(ProductDescription.this).setIndicatorsEnabled(true);  //only for debug tests
+        //Picasso.with(ProductDescription.this).setIndicatorsEnabled(true);  //only for debug tests
         try {
-            Picasso.with(ProductDescription.this)
-                    .load(ProductDetails.getImage())
-                    .placeholder(R.drawable.album3)
-                    .error(R.drawable.album3)
-                    .into(PImage);
+//            Picasso.with(ProductDescription.this)
+//                    .load(ProductDetails.getImage())
+//                    .placeholder(R.drawable.album3)
+//                    .error(R.drawable.album3)
+//                    .into(PImage);
 
         PName.setText(ProductDetails.getName());
         PPrice.setText("Rs. "+ProductDetails.getPrice());

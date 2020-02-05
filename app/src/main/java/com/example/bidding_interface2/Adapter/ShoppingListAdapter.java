@@ -37,12 +37,12 @@ public class ShoppingListAdapter extends ArrayAdapter<ShoppingItem> {
         ShoppingItem currentItem = getItem(position);
 
         ImageView img = (ImageView) listItemView.findViewById(R.id.itemIcon);
-        Picasso.with(getContext())
-                .load(mContext.getApplicationContext().getString(R.string.ip)
-                        + String.valueOf(currentItem.getProductID())
-                        + ".jpg")
-                .fit().centerCrop()
-                .into(img);
+//        Picasso.with(getContext())
+//                .load(mContext.getApplicationContext().getString(R.string.ip)
+//                        + String.valueOf(currentItem.getProductID())
+//                        + ".jpg")
+//                .fit().centerCrop()
+//                .into(img);
 
         TextView name = (TextView) listItemView.findViewById(R.id.itemName);
         name.setText(currentItem.getName());

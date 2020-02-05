@@ -7,33 +7,43 @@ import java.io.Serializable;
 
 @JsonIgnoreProperties
 public class Single_Bid_Item implements Serializable {
-    private String item_name;
-    private String description;
-    private String id;
+    public String item_name;
+    public String description;
+    public String id;
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+//    public void setImageURL(String imageURL) {
+//        this.imageURL = imageURL;
+//    }
+
+    public String imageURL;
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+//    public void setId(String id) {
+//        this.id = id;
+//    }
 
     public String getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
+//    public void setCategory(String category) {
+//        this.category = category;
+//    }
 
     public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
+//    public void setQuantity(Integer quantity) {
+//        this.quantity = quantity;
+//    }
 
     private String category;
     private Integer quantity;
@@ -43,17 +53,17 @@ public class Single_Bid_Item implements Serializable {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
 
     public String getSeller() {
         return seller;
     }
 
-    public void setSeller(String seller) {
-        this.seller = seller;
-    }
+//    public void setSeller(String seller) {
+//        this.seller = seller;
+//    }
 
     private String seller;
 
@@ -72,18 +82,18 @@ public class Single_Bid_Item implements Serializable {
         return item_name;
     }
 
-    public void setItem_name(String item_name) {
-        this.item_name = item_name;
-    }
+//    public void setItem_name(String item_name) {
+//        this.item_name = item_name;
+//    }
 
     @JsonProperty("price")
     public int getItem_price() {
         return item_price;
     }
 
-    public void setItem_price(int item_price) {
-        this.item_price = item_price;
-    }
+//    public void setItem_price(int item_price) {
+//        this.item_price = item_price;
+//    }
 
 
     private int item_price;
@@ -92,9 +102,9 @@ public class Single_Bid_Item implements Serializable {
         return image;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+//    public void setImage(String image) {
+//        this.image = image;
+//    }
 
     private String image;
 
@@ -129,14 +139,24 @@ public class Single_Bid_Item implements Serializable {
         this.category = category;
 
     }
-    public Single_Bid_Item(String name, String image, int price, String description, String seller, String id, Integer quantity){
+//    public Single_Bid_Item(String name, String image, int price, String description, String seller, String id, Integer quantity){
+//        this.item_name = name;
+//        this.image = image;
+//        this.item_price = price;
+//        this.description = description;
+//        this.seller = seller;
+//        this.id = id;
+//        this.quantity = quantity;
+//    }
+    public Single_Bid_Item(String name, String imageURL, int price, String description, String seller, String id, Integer quantity){
         this.item_name = name;
-        this.image = image;
+        this.image = imageURL;
         this.item_price = price;
         this.description = description;
         this.seller = seller;
         this.id = id;
         this.quantity = quantity;
     }
+
 
 }

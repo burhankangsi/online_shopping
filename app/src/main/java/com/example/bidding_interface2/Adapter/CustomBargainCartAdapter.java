@@ -103,14 +103,14 @@ public class CustomBargainCartAdapter extends BaseAdapter {
 
         final BargainProduct curProduct = mBargainCartProductList.get(position);
 
-        Picasso picasso = Picasso.with(context);
-        picasso.setIndicatorsEnabled(false);
-        picasso.load(curProduct.getImage())
-                .networkPolicy(NetworkPolicy.OFFLINE)
-                .resize(200, 200)
-                .placeholder(R.drawable.album3)
-                .error(R.drawable.album3)
-                .into(item.ProductImageView);
+//        Picasso picasso = Picasso.with(context);
+//        picasso.setIndicatorsEnabled(false);
+//        picasso.load(curProduct.getImage())
+//                .networkPolicy(NetworkPolicy.OFFLINE)
+//                .resize(200, 200)
+//                .placeholder(R.drawable.album3)
+//                .error(R.drawable.album3)
+//                .into(item.ProductImageView);
 
         item.ProductTitle.setText(curProduct.getName());
         item.PriceTextView.setText("Rs. "+curProduct.getPrice());

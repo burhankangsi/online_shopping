@@ -66,13 +66,22 @@ public class Home_Drawer extends AppCompatActivity implements NavigationView.OnN
     public static int cartindex = 0;
     public static int bargaincartindex = 0;
 
-    public final static String PROFILE_URL = "http://www.androiddeft.com/wp-content/uploads/2017/11/abhishek.jpg";
-    public final static String BACKGROUND_URL = "http://www.androiddeft.com/wp-content/uploads/2017/11/nav_bg.jpg";
+//    public final static String PROFILE_URL = "http://www.androiddeft.com/wp-content/uploads/2017/11/abhishek.jpg";
+//    public final static String BACKGROUND_URL = "http://www.androiddeft.com/wp-content/uploads/2017/11/nav_bg.jpg";
+//    public final static String SITE_URL = "http://androiddeft.com";
+//    public final static String SHARE_TITLE = "Android Development Tutorials";
+//    public final static String SHARE_MESSAGE = "Hey Friend, I have found an awesome website for learning Android Programming: http://androiddeft.com";
+//    public final static String SHARE_VIA = "Share Via";
+//    public final static String SHARE_TEXT_TYPE = "text/plain";
+
+    public final static String PROFILE_URL = "https://miro.medium.com/max/1388/1*ALMDBkuAAZ28BJ2abmvniA.png";
+    public final static String BACKGROUND_URL = "https://miro.medium.com/max/1388/1*ALMDBkuAAZ28BJ2abmvniA.png";
     public final static String SITE_URL = "http://androiddeft.com";
     public final static String SHARE_TITLE = "Android Development Tutorials";
     public final static String SHARE_MESSAGE = "Hey Friend, I have found an awesome website for learning Android Programming: http://androiddeft.com";
     public final static String SHARE_VIA = "Share Via";
     public final static String SHARE_TEXT_TYPE = "text/plain";
+
 
 
     // toolbar titles respected to selected nav menu item

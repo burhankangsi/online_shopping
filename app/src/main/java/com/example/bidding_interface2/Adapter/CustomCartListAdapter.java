@@ -72,13 +72,13 @@ public class CustomCartListAdapter extends BaseAdapter {
 
         final ProductClass curProduct = mCartProductList.get(position);
 
-        Picasso.with(context).setIndicatorsEnabled(false);
-        Picasso.with(context)
-                .load(curProduct.getImage())
-                .resize(200, 200)
-                .placeholder(R.drawable.album3)
-                .error(R.drawable.album3)
-                .into(item.ProductImageView);
+//        Picasso.with(context).setIndicatorsEnabled(false);
+//        Picasso.with(context)
+//                .load(curProduct.getImage())
+//                .resize(200, 200)
+//                .placeholder(R.drawable.album3)
+//                .error(R.drawable.album3)
+//                .into(item.ProductImageView);
 
         item.ProductTitle.setText(curProduct.getName());
         item.PriceTextView.setText("Rs. "+curProduct.getPrice());
